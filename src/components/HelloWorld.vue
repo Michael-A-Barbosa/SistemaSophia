@@ -34,15 +34,47 @@ export default {
 					src: '/assets/videos/Dancing.mp4',
 					type: 'video/mp4',
 				},
-				//AQUI  Adicionar mais vídeos conforme necessário
-				// {
-				// 	src: '/assets/videos/NINA.mp4',
-				// 	type: 'video/mp4',
-				// },
-				// {
-				// 	src: '/assets/videos/A BAILARINA.mp4',
-				// 	type: 'video/mp4',
-				// },
+				//AQUI  Adicionar mais vídeos
+				{
+					src: '/assets/videos/Dance Monkey.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Enemy.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Midorya AMV.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Midorya AMV2.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Mockingbird.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Nightcore.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Oceans.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Sky Full of Stars.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Stay.mp4',
+					type: 'video/mp4',
+				},
+				{
+					src: '/assets/videos/Those Eyes.mp4',
+					type: 'video/mp4',
+				},
 			],
 		};
 	},
