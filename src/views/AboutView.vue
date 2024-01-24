@@ -2,7 +2,7 @@
   <div class="construction-page">
     <div class="construction-content">
       <h1>Em Construção</h1>
-      <p>Esta página está em construção. Estamos trabalhando para torná-la ainda melhor.</p>
+      <p>Esta página está em construção. Estaou trabalhando para torná-la ainda melhor.</p>
       <!-- <img src="@/assets/construction.gif" alt="Em construção" /> -->
     </div>
   </div>
