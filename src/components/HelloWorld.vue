@@ -1,59 +1,100 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-eslint" target="_blank" rel="noopener">eslint</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
-  </div>
+	<div class="hello">
+		<h1>{{ msg }}</h1>
+		<div class="video-container">
+			<div v-for="(video, index) in videos" :key="index">
+				<h2>
+					{{ extractVideoTitle(video) }}
+					<i class="fas fa-arrow-down"></i>
+				</h2>
+				<video :ref="`videoPlayer-${index}`" :controls="videoOptions.controls" @play="onPlay" @pause="onPause"
+					@ended="onEnded">
+					<source :src="video.src" :type="video.type">
+					Seu navegador não suporta o elemento de vídeo.
+				</video>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script>
 export default {
-  name: 'HelloWorld',
-  props: {
-    msg: String
-  }
-}
+	name: 'HelloWorld',
+	props: {
+		msg: String
+	},
+	data() {
+		return {
+			videoOptions: {
+				autoplay: false,
+				controls: true,
+			},
+			videos: [
+				{
+					src: '/assets/videos/Dancing.mp4',
+					type: 'video/mp4',
+				},
+				//AQUI  Adicionar mais vídeos conforme necessário
+				// {
+				// 	src: '/assets/videos/NINA.mp4',
+				// 	type: 'video/mp4',
+				// },
+				// {
+				// 	src: '/assets/videos/A BAILARINA.mp4',
+				// 	type: 'video/mp4',
+				// },
+			],
+		};
+	},
+	methods: {
+		onPlay() {
+			console.log('Video playing');
+		},
+		onPause() {
+			console.log('Video paused');
+		},
+		onEnded() {
+			console.log('Video ended');
+			// Adicione lógica se desejar realizar alguma ação quando um vídeo terminar
+		},
+		extractVideoTitle(video) {
+			const fileNameWithoutExtension = video.src.split('/').pop().split('.').slice(0, -1).join('.');
+			return fileNameWithoutExtension;
+		},
+	},
+	mounted() {
+		// Inicializar os players de vídeo
+		this.videos.forEach((video, index) => {
+			const player = this.$refs[`videoPlayer-${index}`][0];
+			player.src = video.src;
+			player.type = video.type;
+		});
+	},
+};
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h3 {
-  margin: 40px 0 0;
+h1 {
+	margin-bottom: 20px;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+.video-container {
+	max-width: 80%;
+	margin: auto;
+	text-align: center;
 }
-li {
-  display: inline-block;
-  margin: 0 10px;
+
+video {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
-a {
-  color: #42b983;
+
+h2 {
+	color: #272626;
+	font-size: 1.5em;
+	margin-bottom: 10px;
 }
 </style>
