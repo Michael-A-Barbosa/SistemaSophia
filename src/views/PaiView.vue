@@ -45,8 +45,19 @@ export default {
 			},
 			videos: [
 				{
-					src: 'https://filemoon.sx/e/95exrgfw1emr', // Exemplo de URL de vídeo do YouTube
-					type: 'youtube',
+					src  : 'https://filemoon.sx/e/u4prasn5nanl', // Exemplo de URL de vídeo do YouTube
+					type : 'youtube',
+					name : 'Bons Companheiros',
+				},
+				{
+					src  : 'https://filemoon.sx/e/djysbb7z7djt', // Exemplo de URL de vídeo do YouTube
+					type : 'youtube',
+					name : 'Aquaman 2: O reino perdido',
+				},
+				{
+					src  : 'https://filemoon.sx/e/anhyh0572pts', // Exemplo de URL de vídeo do YouTube
+					type : 'youtube',
+					name : 'Lift: Roub o nas alturas',
 				},
 			],
 		};
@@ -80,7 +91,7 @@ export default {
 			console.log('Video ended');
 		},
 		extractVideoTitle(video) {
-			const fileNameWithoutExtension = video.src.split('/').pop().split('.').slice(0, -1).join('.');
+			const fileNameWithoutExtension = video.name ? video.name : video.src.split('/').pop().split('.').slice(0, -1).join('.');
 			return fileNameWithoutExtension;
 		},
 	},
