@@ -50,7 +50,7 @@ export default {
 				{
 					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r',
 					type: 'youtube',
-					name: 'Nina a heroína dos sete mares.',
+					name: 'A Bailarina.',
 				},
 				{
 					src: 'https://sinalpublico.com/player3/serverf4hlb.php?vid=MRCLSLDBGOFLME',
