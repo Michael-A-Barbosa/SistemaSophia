@@ -38,18 +38,25 @@ export default {
 			},
 			videos: [
 				{
-					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r', // Exemplo de URL de vídeo do YouTube
+					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r',
 					type: 'youtube',
+					name: 'Nina a heroína dos sete mares.',
 				},
-        {
-					src: 'https://sinalpublico.com/player3/serverf4hlb.php?vid=MRCLSLDBGOFLME', // Exemplo de URL de vídeo do YouTube
+				{
+					src: 'https://sinalpublico.com/player3/serverf4hlb.php?vid=MRCLSLDBGOFLME',
 					type: 'youtube',
+					name: 'LadyBug o Filme.',
+				},				
+				{
+					src: 'https://embedder.net/e/tt6685538',
+					type: 'youtube',
+					name: 'Mavka: A aventura na floresta.',
 				},
-				
-				// {
-				// 	src: '/assets/videos/Those Eyes.mp4',
-				// 	type: 'video/mp4',
-				// },
+				{
+					src: 'https://filemoon.sx/e/56xxvrgt38hn',
+					type: 'youtube',
+					name: 'Wish: O poder dos desejos.',
+				},
 			],
 		};
 	},
@@ -65,7 +72,7 @@ export default {
 			// Adicione lógica se desejar realizar alguma ação quando um vídeo terminar
 		},
 		extractVideoTitle(video) {
-			const fileNameWithoutExtension = video.src.split('/').pop().split('.').slice(0, -1).join('.');
+			const fileNameWithoutExtension = video.name ? video.name : video.src.split('/').pop().split('.').slice(0, -1).join('.');
 			return fileNameWithoutExtension;
 		},
 	},
@@ -102,12 +109,14 @@ video {
 }
 
 .youtube-video {
-  width: 100%; /* Defina a largura como 100% */
-  max-width: 100%; /* Largura máxima em relação à largura da tela */
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+	width: 100%;
+	/* Defina a largura como 100% */
+	max-width: 100%;
+	/* Largura máxima em relação à largura da tela */
+	height: auto;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
 }
 
 h2 {
