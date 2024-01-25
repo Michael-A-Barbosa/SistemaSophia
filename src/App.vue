@@ -14,13 +14,13 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #b0c1d1;
-	background-color: #444; /* Defina a cor chumbo desejada */
+	background-color: #bf23a0d6; /* Defina a cor chumbo desejada */
   width: 100%;
 	min-height: 100vh; /* Altura máxima da tela */
 }
 
 nav {
-  background-color: #333; /* Cor de fundo da navegação */
+  background-color: #610052; /* Cor de fundo da navegação */
   padding: 20px 0; /* Espaçamento interno na parte superior e inferior */
 }
 

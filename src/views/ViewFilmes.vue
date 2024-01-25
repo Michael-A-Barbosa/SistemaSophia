@@ -38,6 +38,16 @@ export default {
 			},
 			videos: [
 				{
+					src: 'https://filemoon.sx/e/svs7exudnsp7',
+					type: 'youtube',
+					name: 'Raya e o último Dragão.',
+				},
+				{
+					src: 'https://filemoon.sx/e/cg5n6oqp3dpy',
+					type: 'youtube',
+					name: 'Shrek 3.',
+				},
+				{
 					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r',
 					type: 'youtube',
 					name: 'Nina a heroína dos sete mares.',
