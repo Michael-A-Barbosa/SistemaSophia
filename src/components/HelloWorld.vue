@@ -7,11 +7,18 @@
 					{{ extractVideoTitle(video) }}
 					<i class="fas fa-arrow-down"></i>
 				</h2>
-				<video :ref="`videoPlayer-${index}`" :controls="videoOptions.controls" @play="onPlay" @pause="onPause"
-					@ended="onEnded">
-					<source :src="video.src" :type="video.type">
-					Seu navegador não suporta o elemento de vídeo.
-				</video>
+				<!-- Verificar se é um vídeo do YouTube -->
+				<template v-if="video.type === 'youtube'">
+					<iframe width="560" height="315" :src="video.src" frameborder="0" allowfullscreen></iframe>
+				</template>
+				<!-- Se não for um vídeo do YouTube, usar a tag <video> -->
+				<template v-else>
+					<video :ref="`videoPlayer-${index}`" :controls="videoOptions.controls" @play="onPlay" @pause="onPause"
+						@ended="onEnded">
+						<source :src="video.src" :type="video.type">
+						Seu navegador não suporta o elemento de vídeo.
+					</video>
+				</template>
 			</div>
 		</div>
 	</div>
@@ -31,6 +38,9 @@ export default {
 			},
 			videos: [
 				{
+					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r', // Exemplo de URL de vídeo do YouTube
+					type: 'youtube',
+				},{
 					src: '/assets/videos/Dancing.mp4',
 					type: 'video/mp4',
 				},
@@ -97,9 +107,11 @@ export default {
 	mounted() {
 		// Inicializar os players de vídeo
 		this.videos.forEach((video, index) => {
-			const player = this.$refs[`videoPlayer-${index}`][0];
-			player.src = video.src;
-			player.type = video.type;
+			if (video.type !== 'youtube') {
+				const player = this.$refs[`videoPlayer-${index}`][0];
+				player.src = video.src;
+				player.type = video.type;
+			}
 		});
 	},
 };
