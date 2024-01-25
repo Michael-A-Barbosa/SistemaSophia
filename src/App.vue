@@ -13,19 +13,30 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #b0c1d1;
+	background-color: #444; /* Defina a cor chumbo desejada */
+  width: 100%;
+	min-height: 100vh; /* Altura máxima da tela */
 }
 
 nav {
-  padding: 30px;
+  background-color: #333; /* Cor de fundo da navegação */
+  padding: 20px 0; /* Espaçamento interno na parte superior e inferior */
 }
 
 nav a {
   font-weight: bold;
-  color: #2c3e50;
+  color: #fff; /* Cor do texto dos links */
+  text-decoration: none; /* Remover sublinhado nos links */
+  margin-right: 20px; /* Espaçamento à direita entre os links */
+  transition: color 0.3s ease; /* Transição suave na mudança de cor */
+}
+
+nav a:hover {
+  color: #e9fd10; /* Cor dos links ao passar o mouse */
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #42b983; /* Cor do link ativo */
 }
 </style>

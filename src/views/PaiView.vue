@@ -41,10 +41,9 @@ export default {
 					src: 'https://filemoon.sx/e/95exrgfw1emr', // Exemplo de URL de vídeo do YouTube
 					type: 'youtube',
 				},
-				
 				// {
-				// 	src: '/assets/videos/Those Eyes.mp4',
-				// 	type: 'video/mp4',
+				// 	src: 'https://superflixapi.top/tv/sportv',
+				// 	type: 'youtube',
 				// },
 			],
 		};
@@ -79,7 +78,9 @@ export default {
 </script>
 
 <style scoped>
+
 h1 {
+	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
@@ -98,12 +99,14 @@ video {
 }
 
 .youtube-video {
-  width: 100%; /* Defina a largura como 100% */
-  max-width: 100%; /* Largura máxima em relação à largura da tela */
-  height: auto;
-  border-radius: 10px;
-  margin-top: 10px;
-  margin-bottom: 20px;
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 10px solid rgba(255, 255, 255, 0.2); /* Adicione uma borda grossa com transparência */
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Adicione um efeito de sombra */
 }
 
 h2 {

@@ -9,11 +9,11 @@
 				</h2>
 				<!-- Verificar se é um vídeo do YouTube -->
 				<template v-if="video.type === 'youtube'">
-					<iframe width="560" height="315" :src="video.src" frameborder="0" allowfullscreen></iframe>
+					<iframe class="youtube-video" :src="video.src" frameborder="0" allowfullscreen></iframe>
 				</template>
 				<!-- Se não for um vídeo do YouTube, usar a tag <video> -->
 				<template v-else>
-					<video :ref="`videoPlayer-${index}`" :controls="videoOptions.controls" @play="onPlay" @pause="onPause"
+					<video class="youtube-video" :ref="`videoPlayer-${index}`" :controls="videoOptions.controls" @play="onPlay" @pause="onPause"
 						@ended="onEnded">
 						<source :src="video.src" :type="video.type">
 						Seu navegador não suporta o elemento de vídeo.
@@ -120,6 +120,7 @@ export default {
 
 <style scoped>
 h1 {
+	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
@@ -135,6 +136,17 @@ video {
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+.youtube-video {
+	width: 100%;
+	max-width: 100%;
+	height: auto;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	border: 10px solid rgba(255, 255, 255, 0.2); /* Adicione uma borda grossa com transparência */
+	box-shadow: 0 0 20px rgba(255, 255, 255, 0.4); /* Adicione um efeito de sombra */
 }
 
 h2 {
