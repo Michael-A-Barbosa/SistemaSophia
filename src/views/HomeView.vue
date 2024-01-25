@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <!-- <img class="logo" alt="Vue logo" src="../assets/logo.jpeg"> -->
-    <HelloWorld msg="Sophia por enquanto o papai colocou MÚSICAS pra vc ouvir."/>
+    <HelloWorld msg="Músicas para vcs ouvirem."/>
   </div>
 </template>
 

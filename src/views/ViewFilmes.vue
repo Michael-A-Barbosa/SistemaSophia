@@ -1,6 +1,6 @@
 <template>
 	<div class="hello">
-		<h1>{{ msg }}</h1>
+		<h1>Filmes e Desenhos</h1>
 		<div class="video-container">
 			<div v-for="(video, index) in videos" :key="index">
 				<h2>
@@ -9,7 +9,7 @@
 				</h2>
 				<!-- Verificar se é um vídeo do YouTube -->
 				<template v-if="video.type === 'youtube'">
-					<iframe width="560" height="315" :src="video.src" frameborder="0" allowfullscreen></iframe>
+					<iframe class="youtube-video" :src="video.src" frameborder="0" allowfullscreen></iframe>
 				</template>
 				<!-- Se não for um vídeo do YouTube, usar a tag <video> -->
 				<template v-else>
@@ -26,10 +26,10 @@
 
 <script>
 export default {
-	name: 'HelloWorld',
-	props: {
-		msg: String
-	},
+	// name: 'Filmes',
+	// props: {
+	// 	msg: String
+	// },
 	data() {
 		return {
 			videoOptions: {
@@ -37,55 +37,19 @@ export default {
 				controls: true,
 			},
 			videos: [
+				{
+					src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r', // Exemplo de URL de vídeo do YouTube
+					type: 'youtube',
+				},
+        {
+					src: 'https://sinalpublico.com/player3/serverf4hlb.php?vid=MRCLSLDBGOFLME', // Exemplo de URL de vídeo do YouTube
+					type: 'youtube',
+				},
+				
 				// {
-				// 	src: 'https://www.youtube.com/embed/Srga2h4e8Vw?si=lNsyq9fOtUSCQ75r', // Exemplo de URL de vídeo do YouTube
-				// 	type: 'youtube',
+				// 	src: '/assets/videos/Those Eyes.mp4',
+				// 	type: 'video/mp4',
 				// },
-				{
-					src: '/assets/videos/Dancing.mp4',
-					type: 'video/mp4',
-				},
-				//AQUI  Adicionar mais vídeos
-				{
-					src: '/assets/videos/Dance Monkey.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Enemy.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Midorya AMV.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Midorya AMV2.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Mockingbird.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Nightcore.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Oceans.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Sky Full of Stars.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Stay.mp4',
-					type: 'video/mp4',
-				},
-				{
-					src: '/assets/videos/Those Eyes.mp4',
-					type: 'video/mp4',
-				},
 			],
 		};
 	},
@@ -135,6 +99,15 @@ video {
 	border-radius: 10px;
 	margin-top: 10px;
 	margin-bottom: 20px;
+}
+
+.youtube-video {
+  width: 100%; /* Defina a largura como 100% */
+  max-width: 100%; /* Largura máxima em relação à largura da tela */
+  height: auto;
+  border-radius: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
 }
 
 h2 {

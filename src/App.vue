@@ -1,7 +1,7 @@
 <template>
   <nav>
-    <router-link to="/">Desenhos</router-link> |
-    <router-link to="/about">Em Contrução</router-link>
+    <router-link to="/">Músicas</router-link> |
+    <router-link to="/filmes">Filmes e Desenhos</router-link>
   </nav>
   <router-view/>
 </template>
