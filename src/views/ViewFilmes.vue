@@ -38,6 +38,10 @@ export default {
 			},
 			videos: [
 				{
+					src: 'https://sinalpublico.com/player3/serverf5hlb.php?vid=SPTNHVRMLHEOSTANOES',
+					type: 'youtube',
+					name: 'Sapatinho Vermelho e os 7 Anões.',
+				},{
 					src: 'https://filemoon.sx/e/svs7exudnsp7',
 					type: 'youtube',
 					name: 'Raya e o último Dragão.',
