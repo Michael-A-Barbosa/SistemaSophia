@@ -1,7 +1,7 @@
 <template>
   <nav>
     <router-link to="/">Músicas</router-link> |
-    <router-link to="/filmes">Filmes e Desenhos</router-link> |
+    <!-- <router-link to="/filmes">Filmes e Desenhos</router-link> | -->
     <router-link to="/pai">José Maria</router-link>
   </nav>
   <router-view/>
